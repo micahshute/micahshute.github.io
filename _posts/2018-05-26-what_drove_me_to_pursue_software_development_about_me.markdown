@@ -1,7 +1,7 @@
 ---
 layout: post
-title:      "What drove me to pursue software development ( / about me)"
-date:       2018-05-27 03:47:07 +0000
+title:      "What drove me to pursue software development (about me)"
+date:       2018-05-26 23:47:08 -0400
 permalink:  what_drove_me_to_pursue_software_development_about_me
 ---
 
