@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "Developing Style: Long (Un)Expected Party Decorations"
-date:       2018-09-08 21:47:44 +0000
+date:       2018-09-08 17:47:44 -0400
 permalink:  developing_style_long_un_expected_party_decorations
 ---
 
@@ -20,11 +20,11 @@ My first thought was that I'd get back to developing my style after the project 
 
 But the pattern wasn't the first area of further study I encountered while making the app. Instead, it was the hurdle of instituting proper security. While this perhpas didn't have the elegance that I was hoping for,
 
-![Lightsaber](https://www.dropbox.com/s/30f04cchubjchma/elegant_weapon.png?dl=0)
+![Lightsaber](https://i.imgur.com/7wqhs6w.png)
 
  it is an essential tool which is extremely practical and needs to be taken as seriously as any new algorithm or efficient design pattern.
 
-![Han Solo with Blaster](https://www.dropbox.com/s/ywmwumxi1nc8h27/blaster.jpg?dl=0)
+![Blaster](https://i.imgur.com/xeDiQuR.jpg)
 
 Even in a simple web app, proper authentication and authorization are not trivial. If not taken seriously, you risk exposing your users' information, your app's information, and even compromising your server. [2] Furthermore, you don't develop the skills and the muscle memory which you may need later on to secure a more sensitive application.
 
@@ -32,7 +32,7 @@ Even in a simple web app, proper authentication and authorization are not trivia
 So, what steps are necessary for a simple Sinatra App? Well, how are users authorized and authenticated? We check their username and password at login against the database. Then we persist a session with cookies. These are the two major areas of vulnerability for our use-case. Fortunately, using ActiveRecord abstracts away guarding against [SQL injection](https://en.wikipedia.org/wiki/SQL_injection) at login. Sinatra also provides us (almost) all of the tools we need to keep our cookies secure if we take the time to properly use it. 
 
 
-![Cookies](https://www.dropbox.com/s/qr9ud9vol57q897/cookies.png?dl=0)
+![Cookies](https://i.imgur.com/Kx0Lxfv.png)
 
 As you may or may not know, cookies are hashes (which are just dictionaries) sent to the user from the server to store on their browser. This is so subsequent HTTP requests from the user to the server can be sent with that cookie, and the server can know information about this user - for example, that they have been previously authenticated (ie, it is used to persist state). 
 
@@ -93,7 +93,7 @@ This problem is solvable in some elementary ways. But Design Patterns aren't alw
 
 Coming to a decision of what design patterns to use seems to me to be just as hard as implementing them, if not harder - here's a graphical representation of how they interrelate, helping us to decide which one to use in relation to others:
 
-![Design Pattern Relationships](https://www.dropbox.com/s/jb68wc59ke3sh47/DesignPatternRelationships.png?dl=0)
+![Design Pattern Relationships](https://i.imgur.com/vQXBIko.png)
 
 That is a lot to take in for my first time. So this is how I came to my decision.
 
