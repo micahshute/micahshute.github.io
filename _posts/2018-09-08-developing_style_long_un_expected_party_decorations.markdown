@@ -219,7 +219,7 @@ Now, we want to be able to choose the ice cream we want and change ingredients a
     end
 
 
-So now, we can make our ice cream!
+So now we can make our ice cream!
 
     my_snack = IceCream.new
     my_snack = WithJimmies.new(my_snack)
