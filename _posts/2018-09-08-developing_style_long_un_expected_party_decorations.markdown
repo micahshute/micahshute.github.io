@@ -57,7 +57,8 @@ So, what did I do to combat this?
 - [X] Obtain a random 64-bit hex that won't be in a dictionary. Generate it via the sysrandom gem which creates the hex using the Native OS's method, which is more secure. Copy the output of the code below to obtain a random 64-byte hex string.
   
       ruby -e "require 'sysrandom/securerandom'; puts SecureRandom.hex(64)"
-   It should be noted that this is a 64 bit [hex](https://en.wikipedia.org/wiki/Hexadecimal) value, so each character, even though as a string it is 1 byte - represents 4 bits (or half a byte) per character. (Note that 2^4 = 16, which is the number of possible symbols in a single hex character). So the output as a string is actually 128 bytes (ie there are 128 hex symbols - this is way longer than "session_secret").
+ 
+It should be noted that this is a 64 bit [hex](https://en.wikipedia.org/wiki/Hexadecimal) value, so each character, even though as a string it is 1 byte - represents 4 bits (or half a byte) per character. (Note that 2^4 = 16, which is the number of possible symbols in a single hex character). So the output as a string is actually 128 bytes (ie there are 128 hex symbols - this is way longer than "session_secret").
 
 -  [X] Save my session_secret 64-byte hex string as an environment variable as recommended by [The 12 Factor App](https://12factor.net/config) along with my API Key, so they don't end up anywhere I don't want them to, I can change them easily, and they are language and OS-agnostic.
 
@@ -93,7 +94,7 @@ This problem is solvable in some elementary ways. But Design Patterns aren't alw
 
 Coming to a decision of what design patterns to use seems to me to be just as hard as implementing them, if not harder - here's a graphical representation of how they interrelate, helping us to decide which one to use in relation to others:
 
-![Design Pattern Relationships](https://i.imgur.com/vQXBIko.png)
+[Design Pattern Relationships](https://i.imgur.com/vQXBIko.png)
 
 That is a lot to take in for my first time. So this is how I came to my decision.
 
