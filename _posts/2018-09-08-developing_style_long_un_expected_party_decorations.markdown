@@ -94,7 +94,7 @@ This problem is solvable in some elementary ways. But Design Patterns aren't alw
 
 Coming to a decision of what design patterns to use seems to me to be just as hard as implementing them, if not harder - here's a graphical representation of how they interrelate, helping us to decide which one to use in relation to others:
 
-[Design Pattern Relationships](https://i.imgur.com/vQXBIko.png)
+![Design Pattern Relationships](https://i.imgur.com/vQXBIko.png)
 
 That is a lot to take in for my first time. So this is how I came to my decision.
 
