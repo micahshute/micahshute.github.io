@@ -58,7 +58,7 @@ So, what did I do to combat this?
   
       ruby -e "require 'sysrandom/securerandom'; puts SecureRandom.hex(64)"
  
-It should be noted that this is a 64 bit [hex](https://en.wikipedia.org/wiki/Hexadecimal) value, so each character, even though as a string it is 1 byte - represents 4 bits (or half a byte) per character. (Note that 2^4 = 16, which is the number of possible symbols in a single hex character). So the output as a string is actually 128 bytes (ie there are 128 hex symbols - this is way longer than "session_secret").
+It should be noted that this is a 64 bit [hex](https://en.wikipedia.org/wiki/Hexadecimal) value, so each character (even though as a string it is 1 byte) represents 4 bits (or half a byte) per character. (Note that 2^4 = 16, which is the number of possible symbols in a single hex character). So the output as a string is actually 128 bytes (ie there are 128 hex symbols).
 
 -  [X] Save my session_secret 64-byte hex string as an environment variable as recommended by [The 12 Factor App](https://12factor.net/config) along with my API Key, so they don't end up anywhere I don't want them to, I can change them easily, and they are language and OS-agnostic.
 
@@ -131,7 +131,7 @@ No, because I am not trying to ensure unified actions between connected objects.
 >## Strategy
 >Define a family of algorithms, encapsulate each one, and make them interchangeable. Strategy lets the algorithm vary independently from clients that use it
 
-I do not have an algorithm that I am using to manipulate data in this class. Data is gathered by an APIManager.
+I think I could have solved the problem using a Strategy design pattern. I was unsure which one would work best, and I ended up deciding to go with the decorator.
 
 
 >## Decorator
@@ -140,7 +140,7 @@ I do not have an algorithm that I am using to manipulate data in this class. Dat
 Sounds about right. 
 
 
-However, I want to add here that my use for a decorator here (even though it worked well for me) is probably not the *perfect* one. A decorator as a concept is fully utilized when you specifically want *dynamic* responsibilities allocated to many *individual objects*, not whole classes.  
+However, I want to add here that my use for a decorator here (even though it worked well for me) is probably not the *perfect* one. A decorator as a concept is fully utilized when you specifically want *dynamic* responsibilities allocated (ie they can be given and withdrawn whenever you want) to many *individual objects*, not whole classes. This prevents this augmentation of functionality affecting other objects.
   
 So first let's do a simple example which explains a 'perfect' scenario for a decorator: imagine I'm buying ice cream. How does a decorator help us?
 
@@ -266,6 +266,10 @@ Now just replace the first line in the last example with my_snack = FroYo.new, a
 - All that being said, inheritance is easy to use and supported by the language, so there is a benefit to using it at times.
   
 While both ways can solve a problem, object composition helps to prevent large, unwieldy superclasses, allows easier dynamic appropriation of responsibilities, and helps us adhere to the [single responsibility principle](https://en.wikipedia.org/wiki/Single_responsibility_principle)
+
+Now that we have an intuition of what a decorator is, I think it is important to see a formal definition, in the form of a [Class Diagram](https://courses.cs.washington.edu/courses/cse403/11sp/lectures/lecture08-uml1.pdf)
+
+![Decorator Pattern UML](https://i.imgur.com/XADKZbN.gif)
 
 So, how did I use a decorator? 
 
