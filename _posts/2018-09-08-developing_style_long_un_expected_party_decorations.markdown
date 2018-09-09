@@ -295,7 +295,7 @@ I also gave the decorator the ability to retrieve information from the API via a
 
 While maybe not the best use-case for a decorator, or I may have implemented it sloppily, or there may be some design pattern that may have worked better, using this method certainly made my code easy to work with, gave me practice searching through and choosing design patterns, and awarded me a better understanding of the decorator design pattern. Next time I have a problem, I will be able to have a new way to potentially tackle it, and I will be able to improve on my concrete implementation of the idea. I hope that in the future I can look back and laugh about how primitive or unsystematic my implementation was, while acknowledging that it was this first step forward that commenced the journey which led to mastery.
 
-![Kenobi_wisdom](https://i.imgur.com/OOZKmer.png)
+![larger world](https://i.imgur.com/OOZKmer.png)
 
 
 ## References
