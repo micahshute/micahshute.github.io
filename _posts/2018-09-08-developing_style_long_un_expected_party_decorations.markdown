@@ -6,7 +6,7 @@ permalink:  developing_style_long_un_expected_party_decorations
 ---
 
 
-That being said, I am writing today on lessons learned from making my first web app, which I did using the Sinatra framework. I will touch on what I learned about implementing proper applicaiton security, and then on a Decorator Design Pattern which I utilized in the project.
+I am writing today on lessons learned from making my first web app, which I did using the Sinatra framework. I will touch on what I learned about implementing proper applicaiton security, and then on a Decorator Design Pattern which I utilized in the project.
 
 ## Security
 
