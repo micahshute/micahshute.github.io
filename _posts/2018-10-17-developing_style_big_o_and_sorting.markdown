@@ -312,17 +312,18 @@ __If you know you need to frequently sort a collection which is very nearly alre
 
  - QuickSort: Avoiding Worst Case
     - When I attempted to run QuickSort on the mostly-sorted list, it crashed the program until I brought the dataset size all the way down from 1 million to about 15,000. 
-
+   
 ```
 Quick sort (mostly sorted 15670 nums): 3.8133098 s 
-```  
+```    
 - At this point, the runtime for these 15,000 sorted elements was the same as QuickSort running on 1 MILLION randomized elements, and while the number of quicksort recursions was smaller, the number of loops which occurred in the partition method was drastically larger.
 - As described above this happens because the pivot point is at the end of the array, so every single other element in `arr` is less than the pivot point! Instead of making two even subproblems to achieve the nlgn runtime, we are creating 2 subproblems of size 1 and n-1. The summation of 1 to n is &#1012;( n^2 ). Thank about the summation of 1 to 10. It is `(10 + 1) * (10 / 2) = 55`. Replacing 10 with n, `(n + 1) * (n/2) = (n^2 )/2 + n/2`. Drop coefficients and lower order terms to get `n^2`.
 
 - To solve this problem of &#1012;(n^2 ) runtime for a nearly sorted list, we can be smart about how we choose a pivot element. If I run optimize_pivot to choose my pivot point, I find the median value between the values of the low, hi, and med indices in the subarray. I then switch that value with `arr[hi]` and continue to use `hi` as my pivot index. If the array is already sorted, I am now using the median value of the list rather than an extreme and can achieve &#1012;(n * lgn) runtime on a sorted list because I am back to breaking my problem in halves rather than subtracting one from the size.
 
 
-- Better QuickSort Code
+- Better QuickSort Code   
+    
 ```ruby 
 def quicksort_opt!(coll, lo = 0, hi = nil)
     hi = coll.length - 1 if hi.nil?
@@ -360,9 +361,10 @@ def optimize_pivot(arr, lo, hi)
     arr[mid], arr[hi] = arr[hi], arr[mid] if arr[mid] < arr[hi]
 end 
 
-```
-Here is a second performance metric of all the algorithms including the optimized quicksort
+```  
 
+Here is a second performance metric of all the algorithms including the optimized quicksort
+     
 ```
 Ruby's native sort (1 million numbers): 1.1003078 s
 Merge sort (1 million nums): 2.1523891 s
