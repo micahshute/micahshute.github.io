@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "Developing Style: Big O and Sorting"
-date:       2018-10-17 15:49:59 +0000
+date:       2018-10-17 11:50:00 -0400
 permalink:  developing_style_big_o_and_sorting
 ---
 
@@ -220,7 +220,9 @@ def merge(left, right)
     merged_arr
 end
 ```
-
+  
+	
+	
 ### Quick Sort
 
 - Characteristics
