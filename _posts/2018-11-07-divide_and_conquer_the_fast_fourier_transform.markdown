@@ -39,7 +39,7 @@ whose magnitudes look like this:
     - Note: Negative frequencies are part of both sine and cosine signals. it is what keeps time signals "real" when we mathematically model them as will be explained below. 
    
 
- 2. We can make mathematically convenient equations using Euler's property that:
+ 2. We can make mathematically convenient equations using Euler's property:
     - <a href="http://www.codecogs.com/eqnedit.php?latex=e^{j2\pi&space;ft}&space;=&space;\cos(2\pi&space;ft)&space;&plus;&space;j\sin(2\pi&space;ft)" target="_blank"><img src="http://latex.codecogs.com/gif.latex?e^{j2\pi&space;ft}&space;=&space;\cos(2\pi&space;ft)&space;&plus;&space;j\sin(2\pi&space;ft)" title="e^{j2\pi ft} = \cos(2\pi ft) + j\sin(2\pi ft)" /></a>
     - <a href="http://www.codecogs.com/eqnedit.php?latex=e^{-j2\pi&space;ft}&space;=&space;\cos(2\pi&space;ft)&space;-&space;j\sin(2\pi&space;ft)" target="_blank"><img src="http://latex.codecogs.com/gif.latex?e^{-j2\pi&space;ft}&space;=&space;\cos(2\pi&space;ft)&space;-&space;j\sin(2\pi&space;ft)" title="e^{-j2\pi ft} = \cos(2\pi ft) - j\sin(2\pi ft)" /></a>
     - <a href="http://www.codecogs.com/eqnedit.php?latex=\cos(2\pi&space;ft)&space;=&space;\frac12(e^{j2\pi&space;t}&space;&plus;&space;e^{-j2\pi&space;t})" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\cos(2\pi&space;ft)&space;=&space;\frac12(e^{j2\pi&space;t}&space;&plus;&space;e^{-j2\pi&space;t})" title="\cos(2\pi ft) = \frac12(e^{j2\pi t} + e^{-j2\pi t})" /></a>
