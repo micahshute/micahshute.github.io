@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "Resource Summary For Simple Rails Features"
-date:       2018-12-21 07:04:33 +0000
+date:       2018-12-21 02:04:34 -0500
 permalink:  resource_summary_for_simple_rails_features
 ---
 
@@ -291,16 +291,21 @@ end
 
 <%= sanitize_markdown markdown %>
 
-``` 
+```   
+
 - Custom sanitize method:
-  - As you can see here, I am not using `raw` or `.html_safe` to render this HTML data because ultimately it *came from a user and cannot be trusted*. However, the safe `sanitize` method disallows certain things I want to be rendered, such as tables. You can get proper sanitation AND your desired HTML tags by manually appending to the whitelisted tags allowed through `sanitize` by doing something like what is shown below.
+  - As you can see here, I am not using `raw` or `.html_safe` to render this HTML data because ultimately it *came from a user and cannot be trusted*. However, the safe `sanitize` method disallows certain things I want to be rendered, such as tables. You can get proper sanitation AND your desired HTML tags by manually appending to the whitelisted tags allowed through `sanitize` by doing something like what is shown below.  
+ 
+   
+  
 ```ruby
 # application_helper.rb
 
 def sanitize_markdown(content)
     sanitize(content, tags:  Loofah::HTML5::WhiteList::ALLOWED_ELEMENTS_WITH_LIBXML2.to_a + %w(table th td tr span), attibutes: Loofah::HTML5::WhiteList::ALLOWED_ATTRIBUTES + %w( style ))
 end
-```
+```  
+
 
 ### General tips
 - Set up the app with PostgreSQL
